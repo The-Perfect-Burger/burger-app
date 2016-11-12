@@ -1,0 +1,53 @@
+& {
+  @include flexbox;
+  text-align: center;
+  background-color: #fafafa;
+  border-top: 0.5px solid #dddddd;
+
+  // padding: $unit-1x 0;
+  font-size: $font-size-small;
+  letter-spacing: 0.4px;
+  color: #565b5f;
+
+  height: 50px;
+
+  div {
+    @include flex(1);
+    @include flexbox;
+    @include align-items();
+  }
+
+  button {
+    @include flex(1);
+    color: #9197a3;
+    background: none;
+    font-size: $font-size-small;
+    border: none;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+
+    text-align: center;
+
+    .icons8-Back {
+      opacity: 0.5;
+    }
+
+
+  }
+
+  button.btn-reaction {
+    img {
+      display: block;
+      margin: 0 auto;
+
+      &.flip-y {
+        -moz-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+      }
+    }
+    font-weight: normal;
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="header flex-box align-center">
+  <img src="{{post.item.place.picture}}" class="picture"/>
+  <div class="flex-1">
+    <div class="item">{{post.item.name}}</div>
+    <div class="place">{{post.item.place.name}}</div>
+  </div>
+  <button>Tried</button>
+</div>
+<div class="review-collection">
+  {{#each post.reviews as |review|}}
+    {{item-review review=review class="review"}}
+  {{/each}}
+</div>
+<footer class="flex-box">
+  <button class="flex-1">Tried</button>
+  <button class="flex-1">Want</button>
+  <button class="flex-1">Share</button>
+</footer>

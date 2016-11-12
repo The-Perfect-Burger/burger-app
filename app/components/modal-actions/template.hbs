@@ -1,0 +1,12 @@
+{{#if isActive}}
+  {{liquid-wormhole stack="modal-backdrop" class="modal"
+    click=(action cancel)
+  }}
+  {{liquid-tether
+    send=component
+    target="document.body"
+    attachment="bottom center"
+    targetAttachment="bottom center"
+    class="start-review"
+  }}
+{{/if}}

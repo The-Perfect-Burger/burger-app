@@ -1,0 +1,9 @@
+{{#container-screen}}
+	{{navigation/header-search}}
+	<content>
+		{{#each model as |post|}}
+			{{item-post post=post createReview=(action "createReview")}}
+		{{/each}}
+	</content>
+	{{navigation/footer-main}}
+{{/container-screen}}

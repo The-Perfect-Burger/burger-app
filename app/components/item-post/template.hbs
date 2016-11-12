@@ -1,0 +1,17 @@
+<div class="header">
+  <img src="{{post.item.place.picture}}" />
+  <div class="description">
+    <div class="title">{{post.item.name}}</div>
+    <div class="sub-title">{{post.item.place.name}}</div>
+  </div>
+  <!-- <button>Tried</button> -->
+</div>
+<div class="collection-h">
+  {{#each post.reviews as |review|}}
+    {{item-review review=review}}
+  {{/each}}
+</div>
+{{post-actions
+  createReview=(action createReview post.item)
+
+}}

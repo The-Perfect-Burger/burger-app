@@ -1,0 +1,36 @@
+{{#if selectedPlace}}
+
+{{else}}
+  <div class="search">
+    <input placeholder="Search" />
+  </div>
+  {{#if results}}
+    <div class="places collection-h">
+      {{#deferred-content results as |d|}}
+        {{#d.pending}}
+          Loading results...
+        {{/d.pending}}
+        {{#d.fulfilled as |places|}}
+          {{#each places as |place|}}
+            <div class="place" {{action "selectPlace" place}}>
+              <img src="{{place.picture}}" />
+              <small>{{place.name}}</small>
+            </div>
+          {{/each}}
+        {{/d.fulfilled}}
+        {{#d.rejected as |reason|}}
+          Could not load places nearby: {{reason}}
+        {{/d.rejected}}
+      {{/deferred-content}}
+    </div>
+  {{else}}
+    <div class="message">
+      <button {{action "findPlacesNearby"}}
+        class="btn-link">Find places nearby</button>
+    </div>
+  {{/if}}
+  <div class="footer">
+    <button {{action (action cancel)}}
+      class="btn-link btn-footer">Cancel</button>
+  </div>
+{{/if}}

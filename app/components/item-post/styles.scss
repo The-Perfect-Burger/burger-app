@@ -1,0 +1,71 @@
+@import "./themes/default";
+@import "./mixins/flex";
+
+& {
+
+  .header {
+    @include flexbox;
+    @include align-items(center);
+    padding: $unit-1x;
+    border-top: $unit-1x solid #d5d6db;
+
+    .description {
+      @include flex(1);
+
+      .title {
+        color: $color-text;
+        font-weight: bold;
+        font-size: $font-size-base;
+      }
+
+      .sub-title {
+        color: $color-text-muted;
+        font-size: $font-size-small;
+      }
+    }
+
+
+    img {
+      width: 35px;
+      height: 35px;
+      margin-right: $unit-1x;
+    }
+
+    button {
+      border: 1px solid #3da0fe;
+      background: none;
+      border-radius: 3px;
+      border-width: 0.5;
+      padding: 7px 25px 6px 25px;
+      font-size: 10px;
+      color: #3da0fe;
+      letter-spacing: 0.4px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .actions {
+    @include flexbox;
+    text-align: center;
+    background-color: #fafafa;
+    border-top: 0.5px solid #dddddd;
+
+    padding: $unit-1x 0;
+    font-size: $font-size-small;
+    letter-spacing: 0.4px;
+    color: #565b5f;
+
+    button {
+      @include flex(1);
+      color: #9197a3;
+      background: none;
+      font-size: $font-size-small;
+      border: none;
+      letter-spacing: 0.4px;
+      font-weight: bold;
+    }
+  }
+
+}

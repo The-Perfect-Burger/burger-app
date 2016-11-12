@@ -1,0 +1,11 @@
+{{#container-screen}}
+	{{navigation/header-search}}
+	<content>
+		{{#each model as |post|}}
+			{{post-renderer post=post}}
+		{{/each}}
+	</content>
+	<footer>
+		{{link-to 'Post a burger review' 'reviews.create'}}
+	</footer>
+{{/container-screen}}

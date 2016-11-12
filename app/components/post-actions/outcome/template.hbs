@@ -1,0 +1,17 @@
+<button {{action prev}}>
+  <img class="icon icons8-Back" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABGklEQVRoQ93ayw3CQAwE0EkHlAIdQCVAZVASdEIJaKVEinJASnY+Jnv2YZ/ty0gesJM37MSBapADgM+W5laCPAAcAVy2YKpAGuI2TuIF4LR2KhUgc0T7/x3A898gFERDJydCQyQhVEQKQkckIBKEGyJDOCFShAsiRzggFoQaYkMoIVaECmJHKCARBBsSQzAhUQQLEkcwICUQvZAyiB5IKUQPpGXq6yxXb8rZa3P5r/qeqFsK0wNpDSqD6YWUwTAgJTAsSBzDhEQxbEgMo4BEMCqIHaOEWDFqiA3jgFgwLogc44RIMW6IDJOASDApCB2ThFAxaQgNUwGyxLzHC4hVkb4KZMK0E47zP59wTN3fxVHNqlVaFldarS7IFzSdWjMfaV2JAAAAAElFTkSuQmCC"
+  width="25" height="25">
+</button>
+<!-- <button {{action (queue (action addOutcome "disliked") (action next))}}>Disliked</button> -->
+<!-- <button {{action (queue (action addOutcome "liked") (action next))}}>Liked</button> -->
+<!-- <button {{action (queue (action addOutcome "loved") (action next))}}>
+  <img class="icon icons8-Like-Filled" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACjklEQVRoQ+2Z/XHUMBDFXyogVABUkFABUAGhgiQVJFQAVABUAFRAqICkgiQVAB2QCmB+N5ZH1snWhyWf7Tn9czNneaW37+1qtT7QSsbBSnBoD2RuTO4Z2TNSyQMp0noq6bWkE0mHko6bPd1J+ivpStIPSb8j91rUXgyQl5LeSeI3ZlxLeisJgL6BAz4m2vsgCbu9IwSEBS9jdu+Z86kBZD8qba+13QcE6XxP8FofVlh51Tz8ackx0zcbVt40Uu7Y6APCorFSCm3KSMzEVGh+6DlgjHMGGUESFyFrO37+2ZW8ywgswMYSxnM7obhASkqqtjM6ErOBkNd/1V69sP1n5tyygZBmSY9LGpxXxHSnjIeqF0tCIenGZFebkdsCeX5qP5DaCfoOI/+m3kWh9TZk2IysBgg0HRXy0lRmvDGymmD/Kul0KlcWWuebpDM3RlZzjizxZH9sSnq31lpSnHCt5tq9GS4Q9PalkH5rmzmXRFx7gXAzJA0/qb2Lkfb/NFUITQ8vEP5cAisdNnzSMgDnHCvtIWiz2ndn534NmEcjJVD69Yem2t1qNQ21g+YoMTooNAK3RqivNadGBE26930Uh4Dw3hxKl7YUGQNk12CCIIaylg/4LpiJApEKhPlTFpZtYyEm9cXEiGuHJh6Zo1ZqJsVSQw12391N5QDBBucMUit9o7xvQMR+Y2nx5AIxBkqm561+boykhmqtlPeZO1ZqFIAcvklSKiUt1w5VM1Lj01zK4E4BiLaKTXk5ptbKtUeQAiiUCAhoAHjLjZzFx8aIb80QO8VYqMmIbRuPkwwMO7DAOdTe6nI8P7ZEyV3TpGneB1jfl95c+8XSb8wGkBpjdEAPLVYjRmLAFZ+zGiD/AYHSajNNCdA4AAAAAElFTkSuQmCC"
+  width="15" height="15">
+  Loved</button> -->
+{{btn-reaction reaction="disliked" size=25
+  click=(queue (action addOutcome "disliked") (action next))}}
+{{btn-reaction reaction="liked" size=25
+  click=(queue (action addOutcome "liked") (action next))}}
+{{btn-reaction reaction="loved" size=25
+  click=(queue (action addOutcome "loved") (action next))}}
+<button></button>

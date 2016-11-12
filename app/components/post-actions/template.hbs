@@ -1,0 +1,10 @@
+{{#liquid-bind activeState class="post-actions-animation"
+  as |currentActiveState|}}
+  {{component (concat "post-actions/" currentActiveState.componentName)
+    changeState=(action "changeState")
+    next=(action "next")
+    prev=(action "prev")
+    addOutcome=(action "addOutcome")
+    addComment=(action "addComment")
+  }}
+{{/liquid-bind}}

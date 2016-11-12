@@ -1,0 +1,65 @@
+@import "./themes/default";
+@import "./mixins/flex";
+
+& {
+  width: calc(100vw - #{$unit-3x});
+
+  margin-left: 6px;
+  margin-bottom: $unit-2x;
+
+  &:last-child {
+    margin-right: $unit-1x;
+  }
+
+  &:first-child {
+    margin-left: $unit-1x;
+  }
+
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
+
+  img {
+    display: block;
+    border-bottom: 0.5px solid #dddddd;
+    height: 250px;
+  }
+
+  .details {
+    @include flexbox;
+    padding: $unit-1x $unit-1x $unit-2x;
+
+    .reaction {
+      width: $unit-2x;
+      height: $unit-2x;
+      border-radius: 50%;
+      background-color: #5890ff;
+      display: inline-block;
+      margin-right: $unit-1x;
+
+      &.liked {
+        background-color: #5890ff;
+      }
+      &.disliked {
+        background-color: #f25268;
+      }
+      &.favourited {
+        background-color: #ffd972;
+      }
+    }
+
+    p {
+      @include flex(1);
+      line-height: 18px;
+      margin: 0;
+      white-space: normal;
+
+      .author {
+        font-size: $font-size-small;
+        color: $color-text-muted;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,43 @@
+@import "./themes/default";
+@import "./mixins/flex";
+
+& {
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+
+	@keyframes blur {
+		from {
+			-webkit-filter: blur(0);
+		}
+		to {
+			-webkit-filter: blur(2px);
+		}
+	}
+
+	content {
+		flex: 1;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		background: $color-bg-default;
+
+		&.padded {
+			padding: $unit-1x;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+	}
+
+	.footer {
+		@include flexbox;
+		background: $color-bg-default;
+		border-top: 0.5px solid #dddddd;
+		height: $height-footer;
+		text-align: center;
+	}
+}

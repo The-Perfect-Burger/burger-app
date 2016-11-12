@@ -1,0 +1,114 @@
+@import '../themes/default';
+
+.place-search {
+
+  &.open {
+    pointer-events: auto;
+
+    .modal {
+      pointer-events: auto;
+      opacity: 0.5;
+    }
+    .place-search-container {
+      transform: translateY(0);
+    }
+  }
+
+  .modal {
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+  }
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+
+  .place-search-container {
+    position: fixed;
+    width: 100vw;
+    height: 250px;
+    left: 0;
+    bottom: 0;
+    background: white;
+    transform: translateY(100%);
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+
+    .search {
+      border-bottom: 0.5px solid #eee;
+      padding: 9px 18px;
+      input {
+				width: 100%;
+				box-sizing: border-box;
+				border: none;
+				font-size: 14px;
+				padding: 6px 9px;
+				background-color: rgba(0,0,0,0.1);
+				border-radius: 3px;
+				text-align: center;
+				color: $font-color;
+			}
+    }
+
+    .nearby {
+      overflow-x: scroll;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      padding: 18px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .place {
+        text-align: center;
+        display: inline-block;
+        width: 100px;
+        vertical-align: top;
+        img {
+          display: block;
+          border-radius: 50%;
+          width: 75px;
+          height: 75px;
+          margin: 0 auto 9px;
+          border: $border-thin;
+        }
+        small {
+          display: block;
+          overflow: hidden;
+          width: 100px;
+          font-size: 10px;
+          text-overflow: ellipsis;
+          text-align: center;
+        }
+      }
+    }
+
+    .cancel {
+      width: 100vw;
+      text-align: center;
+      border-top: $border-thin;
+      box-sizing: border-box;
+      padding: 18px;
+    }
+
+  }
+
+
+  /* &.active {
+    transform: translateX(0);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  */
+}

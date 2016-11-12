@@ -1,0 +1,56 @@
+@import 'components/navigation/screen-container';
+@import 'components/navigation/screen-header';
+@import 'components/navigation/header-search';
+@import 'components/post-renderer';
+@import 'components/place-search';
+@import "themes/default";
+@import "pod-styles";
+
+body {
+	padding: 0;
+	margin: 0;
+	background: black;
+	font-family: -apple-system, 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+	> .ember-view {
+		height: 100%;
+	}
+
+	font-size: $font-size-base;
+
+	user-select: none;
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.modal {
+	background-color: rgba(0,0,0,.5);
+	height: 100vh;
+	width: 100vw;
+}
+
+.text-muted {
+	color: #949597;
+}
+
+.container {
+	background-color: white;
+}
+
+.collection-h {
+	overflow-x: scroll;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+
+	padding: 0;
+
+	& > * {
+		display: inline-block;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+}

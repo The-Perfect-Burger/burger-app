@@ -1,0 +1,10 @@
+<img src="{{review.photo}}" width="100%"/>
+<div class="details">
+  <div>
+    <span class="reaction {{review.reaction}}"></span>
+  </div>
+  <p>
+    <div class="author">{{review.author.name}} did not like this burger</div>
+    {{truncate review.body 50}}
+  </p>
+</div>

@@ -1,0 +1,41 @@
+@import "../mixins/flex";
+
+$unit-1x: 9px;
+$unit-2x: 18px;
+$unit-3x: 27px;
+
+$color-text: #1c1d22;
+$color-text-muted: #949597;
+$color-action: #3da0fe;
+
+$color-bg-default: white;
+
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-xsmall: 10px;
+
+$height-footer: 49px;
+
+$font-color: #1c1d22;
+$action-color: #3da0fe;
+$border-thin: 0.5px solid #d5d6db;
+
+.footer {
+  @include flexbox;
+  height: $height-footer;
+  background-color: $color-bg-default;
+  border-top: 0.5px solid #dddddd;
+}
+
+.btn-link {
+  color: $color-action;
+  background: none;
+  border: none;
+  font-size: $font-size-base;
+  font-weight: bold;
+
+  &.btn-footer {
+    height: $height-footer;
+    @include flex(1);
+  }
+}

@@ -1,0 +1,9 @@
+<button {{action (toggle "hasStartedReview" this)}}
+  class="btn-link btn-footer"
+  >Start a burger review</button>
+
+{{modal-actions
+  component=(component "start-review"
+    cancel=(toggle "hasStartedReview" this))
+  cancel=(toggle "hasStartedReview" this)
+  isActive=hasStartedReview}}

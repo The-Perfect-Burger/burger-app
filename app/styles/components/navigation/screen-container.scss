@@ -1,0 +1,61 @@
+@import '../../themes/default';
+
+screen {
+	$inputWidth: 90%;
+
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&[data-submitting="true"] > *:not(.spinkit-spinner-component) {
+		animation-duration: 0.3s;
+		animation-name: blur;
+		-webkit-filter: blur(2px);
+	}
+
+	@keyframes blur {
+		from {
+			-webkit-filter: blur(0);
+		}
+		to {
+			-webkit-filter: blur(2px);
+		}
+	}
+
+	content {
+		flex: 1;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		background: white;
+
+		&.padded {
+			padding: 9px;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+	}
+
+	.footer {
+		background: white;
+		border-top: 0.5px solid #dddddd;
+		height: 49px;
+		text-align: center;
+
+		button {
+
+			color: $action-color;
+			background: none;
+			border: none;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	}
+}

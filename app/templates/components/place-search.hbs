@@ -1,0 +1,48 @@
+<div class="modal" {{action "close"}}></div>
+<div class="place-search-container">
+  <div class="search">
+    <input placeholder="Search" />
+  </div>
+  <div class="nearby">
+    <button {{action "requestLocation"}}>Get location</button>
+    <places>
+      {{#deferred-content places.nearby as |d|}}
+        {{#d.pending}}
+          Loading places nearby...
+        {{/d.pending}}
+        {{#d.fulfilled as |places|}}
+          {{#each places as |place|}}
+            <div class="place" {{action "loadItems" place}}>
+              <img src="{{place.picture}}" />
+              <small>{{place.name}}</small>
+            </div>
+          {{/each}}
+        {{/d.fulfilled}}
+        {{#d.rejected as |reason|}}
+          Could not load places nearby: {{reason}}
+        {{/d.rejected}}
+      {{/deferred-content}}
+    </places>
+    <burgers>
+      {{#deferred-content items as |d|}}
+        {{#d.pending}}
+          Loading places nearby...
+        {{/d.pending}}
+        {{#d.fulfilled as |items|}}
+          {{#each items as |item|}}
+            <div class="item" {{action "startReview" item}}>
+              <img src="{{item.image}}" />
+              <small>{{item.name}}</small>
+            </div>
+          {{/each}}
+        {{/d.fulfilled}}
+        {{#d.rejected as |reason|}}
+          Could not load places nearby: {{reason}}
+        {{/d.rejected}}
+      {{/deferred-content}}
+    </burgers>
+  </div>
+  <div class="cancel">
+    <button {{action "close"}}>Cancel</button>
+  </div>
+</div>
